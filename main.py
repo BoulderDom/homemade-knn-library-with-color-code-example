@@ -20,8 +20,13 @@ while running == True:
   if predict == "exit":
     break
  
-  if (len(predict) != 6 or predict.isnumeric() == False):
+  if len(predict) != 6:
     print("Please enter a six-digit color hex code.")
+    continue
+  try: 
+    int(predict, 16)
+  except ValueError:
+    print("Please enter a six-digit color hex code")
     continue
   part_1_predict = int(predict[:2], 16)
   part_2_predict = int(predict[2:4], 16)
