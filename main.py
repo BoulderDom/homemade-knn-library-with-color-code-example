@@ -20,7 +20,7 @@ while running == True:
   if predict == "exit":
     break
  
-  if len(predict) != 6:
+  if (len(predict) != 6 or predict.isnumeric() == False):
     print("Please enter a six-digit color hex code.")
     continue
   part_1_predict = int(predict[:2], 16)
